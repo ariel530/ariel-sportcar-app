@@ -1,0 +1,30 @@
+<h2> Ariel's Sport Cars List (click on a car for more details) </h2>
+<ul class="sportcars">
+  <li *ngFor="let sportcar of sportcars"
+    [class.selected]="sportcar === selectedSportcar"
+    (click)="onSelect(sportcar)">
+    <span class="badge">{{sportcar.id}}</span> {{sportcar.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedSportcar">
+
+  <h2>{{selectedSportcar.name | uppercase}} Details</h2>
+  <div><span>ID: </span>{{selectedSportcar.id}}</div>
+  <div><span>Name: </span>{{selectedSportcar.name}}</div>
+  <div><span>Model: </span>{{selectedSportcar.model}}</div>
+  <div><span>Price: </span>{{selectedSportcar.price}} €</div>
+  <div><span>Year: </span>{{selectedSportcar.year}}</div>
+  <div><span>Race: </span>{{selectedSportcar.race}}</div>
+
+</div>
+<!--
+<h2>{{sportcar.name | uppercase}} Details</h2>
+<div><span>id: </span>{{sportcar.id}}</div>
+<div><span>Name: </span>{{sportcar.name}}</div>
+<div><span>Price: </span>{{sportcar.price}} €</div>
+<div><span>Year: </span>{{sportcar.year}}</div>
+<div><span>Race: </span>{{sportcar.race}}</div>
+
+-->
+
