@@ -4,5 +4,5 @@ export interface Sportcar {
   model: string;
   price: number;
   year: number;
-  race: string  
+  
 }
